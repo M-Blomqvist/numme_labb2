@@ -18,9 +18,14 @@ T = @(h) h*(sum(ekv([-1:h:1]))-(ekv(-1)+ekv(1))/2);
 results = zeros(size(hs));
 for i= 1:size(hs,2)
     h = hs(i);
+    fprintf('Trapezoid using h = %d \n', h);
     xs = [-1:h:1];
     ys = ekv(xs);
     results(i) = T(h);
+    %check correctness of function
+    if results(i) - trapz(ys) > 1e-14
+       fprintf('Bad trapezoid rule implementation!');
+    end
     plot(xs,ys, 'c --');
     pause
 end
