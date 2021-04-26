@@ -58,7 +58,7 @@ b(dofs(:,II)+1)=B;
 g=1e-5;
 A(II,II)=A(II,II)+g*ones(size(II))*theta/100;
 % Solve the linear system of equation FEM 
-tic
+
 u=A\b; 
 %elapsed_time_linsys=toc; % CPU-time to solve linear system
 
