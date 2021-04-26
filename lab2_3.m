@@ -56,8 +56,9 @@ bottom = 1.7641627815248;
 
 m_1 = I/bottom;
 
-fprintf("m = %d with h = %d", m_1, h);
+fprintf("m = %d with h = %d\n", m_1, h);
 
+%%%%% Nytt h
 start = tic;
 
 m = @(theta) max(generator(theta, 0));
@@ -83,9 +84,50 @@ bottom = 1.7641627815248;
 
 m_2 = I/bottom;
 
-fprintf("m = %d with h = %d", m_2, h);
+fprintf("m = %d with h = %d\n", m_2, h);
 
 % calculate diff
 
 diff = abs(m_2 - m_1);
-fprintf("differance = %d", diff);
+fprintf("differance = %d\n", diff);
+
+%%%%%%%%
+% c)
+%%%%%%%%
+
+start = tic;
+
+m = @(theta) max(generator(theta, 0));
+% integranden för täljaren
+f = @(t) exp(-beta*t^2)*m(theta_v + t);
+
+% beräkna integralen med simpsons
+
+h = 1e-1;
+% diskretisera
+x = -s:h:s;
+y = zeros(size(x));
+for i = 1:size(x,2) 
+    y(i) = f(x(i));
+end
+
+I = (h/3)*(y(1) + 4*sum(y(3:2:(size(x,2)-1))) + 2*sum(y(2:2:(size(x,2)-1)) + y(size(x,2))));
+time = toc(start);
+fprintf("b) Integral: %1.16d with h: %d time: %ds\n", I, h, time);
+
+% beräknat i a)
+bottom = 1.7641627815248;
+ 
+m_2 = I/bottom;
+
+fprintf("m = %d with h = %d\n", m_2, h);
+% 
+% % calculate diff
+% 
+% diff = abs(m_2 - m_1);
+% fprintf("differance = %d\n", diff);
+
+
+
+
+
