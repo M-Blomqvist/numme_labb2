@@ -13,6 +13,7 @@ Integral: 1.7641627815248437e+00 with h: 1.000000e-07
 Integral: 1.7641627815248337e+00 with h: 1.000000e-08
 Integral: 1.7641627815248191e+00 with h: 5.000000e-09
 ```
+<<<<<<< HEAD
 
 ## b)
 Täljaren beräknat med h = 0.1
@@ -37,3 +38,5 @@ differance =    0.5447542
 ```
 
 ## c)
+=======
+>>>>>>> 1d9cd0210fbfa3b7967c2c45b5bbbe3dc2740106
