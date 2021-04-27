@@ -107,13 +107,19 @@ h = 1e-1;
 % diskretisera
 x = -s:h:s;
 y = zeros(size(x));
+sum = 0;
 for i = 1:size(x,2) 
     y(i) = f(x(i));
+%     if i == 1 
+%         sum = sum + y(i)
+%     elseif mod(i, 2) == 0 
+%         sum = sum + y(i);
+%     end
 end
 
-I = (h/3)*(y(1) + 4*sum(y(3:2:(size(x,2)-1))) + 2*sum(y(2:2:(size(x,2)-1)) + y(size(x,2))));
+I = (h/3)*(y(1) + 4*sum(y(2:2:(size(x,2)-1))) + 2*sum(y(3:2:(size(x,2)-1)) + y(size(x,2))));
 time = toc(start);
-fprintf("b) Integral: %1.16d with h: %d time: %ds\n", I, h, time);
+fprintf("c) Integral: %1.16d with h: %d time: %ds\n", I, h, time);
 
 % beräknat i a)
 bottom = 1.7641627815248;
