@@ -27,8 +27,7 @@ results = unique(fixpunkt(guesses, theta, 1e-14));
 
 ## c)
 ###  Plot the circles and their solutions, are they at the intersections? What is expected?
-The circles do not intersect the point but that is because the Gauss-Newton function attempts to minimize the mean square error between all the different intersections of the circles, leading the best approximate solution to be found at a place between them all `(42.4134 42.8719)` having 
-`||ekv(v)||2 = 1.310642e+04`.
+The circles do not intersect the point but that is because there is no perfect point where all circles cross, the Gauss-Newton function only attempts to minimize the mean square error to find the best possible point: `(42.4134 42.8719)` having a low MSE: `||ekv(v)||2 = 1.310642e+04`.
 
 ![plot](2_1.png)
 ```matlab
