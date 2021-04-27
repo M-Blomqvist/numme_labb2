@@ -139,9 +139,4 @@ fprintf("m = %d with h = %d\n", m_25, h5);
 % calculate diff
  
 diff = abs(I1 - I5);
-fprintf("differance between numerators = %d\n", diff);
-
-
-
-
-
+fprintf("differance = %d\n", diff);
