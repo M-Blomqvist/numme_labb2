@@ -13,7 +13,7 @@ hold on;
 %b) Approximate I using the Trapezoidal rule for h = 1,
 %0.5,0.25,0.125,0.0625
 % yes the approximations seem to converge as h->0
-hs = [1,0.5,0.25,0.125,0.0625,0.03125]
+hs = [1,0.5,0.25,0.125,0.0625]
 T = @(h) h*(sum(ekv([-1:h:1]))-(ekv(-1)+ekv(1))/2);
 results = zeros(size(hs));
 for i= 1:size(hs,2)
@@ -73,7 +73,7 @@ for i = 2:size(r_errors,2)
 end
 r_change_err
 
-%d) Plot the errors of both mehods using loglog
+%e) Plot the errors of both mehods using loglog
 % There too we see a slope of approximatly 2 for trapezoid & 4 for
 % Richardsons extrapolated trapezoid (Simpsons) as according to theory
 

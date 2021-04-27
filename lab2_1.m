@@ -5,7 +5,7 @@ ekv = @(v) [(93-v(1))^2 + (63 - v(2))^2 - 55.1^2 ; (6-v(1))^2 + (16 - v(2))^2 - 
 
 %Task a) Write the Gauss-Newton iteration, why do we use Gauss-Newton & not
 %Newtons method?
-%Methos uses the Jacobian matrix to ekv(v):
+%Method uses the Jacobian matrix to ekv(v):
 J = @(v) -2*[93-v(1), 63-v(2); 6-v(1), 16-v(2);20-v(1), 83-v(2)];
 
 %xn+1 = 
@@ -24,7 +24,7 @@ results = unique(fixpunkt(guesses, theta, 1e-14));
 %c) Plot the circles and their solutions, are they at the intersections?
 %What is expected?
 %The circles do not intersect the point but that is because the Gauss
-%Jordan function attempts to minimize the mean square error between all the
+%Newton function attempts to minimize the mean square error between all the
 %different intersections of the circles, leading the best approximate solution
 %to be found at a place between them all (42.4134 42.8719) having 
 %||ekv(v)||2 = 1.310642e+04
