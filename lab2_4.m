@@ -17,7 +17,7 @@ F = @(x)f(x) - [1.3; 1.3];
 p = @(x) x - J(x)\F(x);
 
 % önskad nogrannhet
-d = 1e-10;
+d = 1e-11;
 
 % stargissning 
 x = [pi/2; pi/4];
