@@ -27,7 +27,7 @@ results = unique(fixpunkt(guesses, theta, 1e-14));
 
 ## c)
 ###  Plot the circles and their solutions, are they at the intersections? What is expected?
-The circles do not intersect the point but that is because there is no perfect point where all circles cross, the Gauss-Newton function only attempts to minimize the mean square error to find the best possible point: `(42.4134 42.8719)` having a low MSE: `||ekv(v)||2 = 1.310642e+04`.
+The circles do not intersect the point but that is because there is no perfect point where all circles cross, the Gauss-Newton function only attempts to minimize the mean square error to find the best possible point: `(42.4134 42.8719)` having a low error: `||ekv(v)||2 = 1.310642e+04`.
 
 ![plot](2_1.png)
 ```matlab
@@ -101,7 +101,15 @@ Theory tells us that the trapezoidal rule has a Order of accuracy of 2 meaning t
 R = @(h) T(h)-(T(2*h)-T(h))/3;
 ```
 
-Using richardson extrapolation, theory tells us that the Order of Accuracy should increase by two p=2 -> p = 4. This would in turn mean that the error quota would be O(h^4)/O((h/2)^4) ~= 16. It seemingly takes a while before it reaches this zone of assymptotic convergence but it is close by the last two/three step-lengths
+Using richardson extrapolation, theory tells us that the Order of Accuracy should increase by two p=2 -> p = 4. This would in turn mean that the error quota would be O(h^4)/O((h/2)^4) ~= 16. It seemingly takes a while before it reaches this zone of assymptotic convergence but it is close by the last two step-lengths
+
+```matlab
+r_results = 2.7963       2.7973       2.7974       2.7974       2.7974
+
+r_errors =  0.0011333   9.9492e-05   7.1574e-06   4.6809e-07   2.9623e-08
+
+r_change_err =  0        11.39       13.901       15.291       15.802
+```
 
 ## e)
 ### Plot the errors of both mehods using loglog
