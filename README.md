@@ -168,3 +168,27 @@ differance in m = 4.550357220068690e-03
 differance in numerator = 8.027571e-03
 ```
 6 correct decimals
+
+Simpson's is obviously better as it's more accurate and faster
+
+# Task 4
+## a)
+```matlab
+Finding root with starting guess x = [1.570796e+00 7.853982e-01 ]
+x: [1.385010e+00 2.096622e-01 ]  diff: 6.049698e-01 
+x: [1.215012e+00 3.532885e-01 ]  diff: 2.225481e-01 
+x: [1.190818e+00 3.800073e-01 ]  diff: 3.604512e-02 
+x: [1.190052e+00 3.807439e-01 ]  diff: 1.062500e-03 
+x: [1.190052e+00 3.807445e-01 ]  diff: 9.317350e-07 
+x: [1.190052e+00 3.807445e-01 ]  diff: 7.168675e-13 
+Solution found! angles: [1.190052e+00 3.807445e-01 ] posititons: [1.300000e+00,1.300000e+00,] nogrannhet: 7.168675e-13
+```
+![robotarm](Robotarm.png)
+
+## b)
+![ekvation](ode_ekv.png)
+
+## c)
+```matlab
+Finished at angles: [1.192293e+00 3.183914e-01] position: (1.319270e+00, 1.242258e+00)
+```
